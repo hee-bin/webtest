@@ -1,0 +1,10 @@
+/* src/components/Title/title.css */
+.title h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.title hr {
+  margin: 0 auto;
+  width: 50%;
+}

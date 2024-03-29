@@ -1,0 +1,9 @@
+/* src/pages/ClassPage.css */
+.classPage {
+  padding: 20px;
+}
+
+.classPostsContainer {
+  display: flex;
+  flex-direction: column;
+}

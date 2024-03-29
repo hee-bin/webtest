@@ -1,0 +1,44 @@
+/* src/App.css */
+.App {
+  text-align: center;
+  background-color: #f5f6f7; /* Light grey background */
+}
+
+/* 중앙 정렬 및 max-width 설정 */
+.App-container {
+  max-width: 800px; /* 페이지 너비 설정 */
+  margin: 0 auto; /* 좌우 마진으로 중앙 정렬 */
+  padding: 20px; /* 컨테이너 내부의 패딩 */
+  background: #fff; /* 배경색을 흰색으로 설정 */
+  min-height: 100vh; /* 최소 높이를 뷰포트 높이로 설정 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* 약간의 그림자 효과 */
+  border-radius: 10px; /* 모서리를 둥글게 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더, 푸터, 내비게이션, 기타 전역 스타일을 여기에 추가합니다. */
+/* 예시 */
+.header,
+.footer,
+.nav {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.nav {
+  border-bottom: 1px solid #ececec; /* 상단 탭 아래 경계선 추가 */
+  margin-bottom: 20px;
+}
+
+.nav a {
+  color: #333; /* 상단 탭 링크 색상 */
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.nav a:hover {
+  color: #007bff; /* 상단 탭 링크 호버 색상 */
+}
+
+/* 스크롤 애니메이션 키프레임은 삭제될 수 있습니다. */

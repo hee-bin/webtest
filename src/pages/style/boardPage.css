@@ -1,0 +1,50 @@
+/* src/pages/JobPage.css 및 src/pages/FreePage.css */
+.pageContainer {
+  background-color: #f5f6f7; /* 배경색 */
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5em; /* 제목 크기 */
+  color: #333; /* 제목 색상 */
+  padding-bottom: 20px;
+}
+
+.writeButton {
+  display: inline-block; /* 또는 flex 아이템에 따라 */
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #007bff; /* Bootstrap primary 색상으로 설정 */
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; /* Link 컴포넌트에 대한 스타일 제거 */
+}
+
+.writeButton:hover {
+  background-color: #0056b3; /* 호버 효과를 위한 색상 변경 */
+}
+
+/* 공통 Footer 스타일 */
+.footer {
+  background-color: #f5f6f7; /* 푸터 배경색 */
+  padding: 20px;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #333; /* 푸터 링크 색상 */
+  margin-right: 15px;
+}
+
+.footer a:last-child {
+  margin-right: 0;
+}
+
+.footer p {
+  color: #666;
+}
