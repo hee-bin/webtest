@@ -74,13 +74,15 @@ function ClassPage() {
               </Link>
             </div>
           </div>
-          {classPosts.map((post) => (
-            <ClassPostItem
-              key={post.id}
-              date={post.date}
-              images={post.images}
-            />
-          ))}
+          <div className="grid grid-cols-3 gap-4">
+            {classPosts.map((post) => (
+              <ClassPostItem
+                key={post.id}
+                date={post.date}
+                images={post.images}
+              />
+            ))}
+          </div>
         </div>
       </div>
       <Footer />

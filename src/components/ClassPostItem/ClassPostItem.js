@@ -37,12 +37,12 @@ function ClassPostItem({ date, images }) {
         ))}
       </div>
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-          <div className="bg-white p-5 rounded-lg">
+        <div className="fixed inset-0 z-50 flex justify-center items-center">
+          <div className="bg-white p-8 rounded-lg max-w-3xl overflow-y-auto">
             <img
               src={currentImage}
               alt="Class Image Large"
-              className="w-auto max-h-screen rounded"
+              className="w-auto max-h-96 rounded"
             />
             <button
               onClick={closeModal}
