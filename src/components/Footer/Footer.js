@@ -1,12 +1,17 @@
-// src/components/Footer/Footer.js
 import React from "react";
-import "./Footer.css";
+import { Box, Text } from "@chakra-ui/react"; // Chakra UI 컴포넌트를 임포트합니다.
 
 function Footer() {
   return (
-    <footer className="footer">
-      <p>© 2024 게시판. 모든 권리 보유.</p>
-    </footer>
+    <Box
+      as="footer"
+      className="footer"
+      textAlign="center"
+      p="20px"
+      bg="gray.100"
+    >
+      <Text>© 2024 게시판. 모든 권리 보유.</Text>
+    </Box>
   );
 }
 

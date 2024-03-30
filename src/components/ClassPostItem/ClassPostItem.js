@@ -1,19 +1,44 @@
-// src/components/ClassPostItem/ClassPostItem.js
 import React from "react";
-import "./ClassPostItem.css";
+import { Box, Image, Grid } from "@chakra-ui/react";
 
 function ClassPostItem({ date, images }) {
   return (
-    <div className="classPostItem">
-      <div className="postDate">{date}</div>
-      <div className="postImages">
+    <Box
+      backgroundColor="white"
+      p="5"
+      borderRadius="10px"
+      m="5"
+      boxShadow="sm"
+      _hover={{
+        boxShadow: "md", // 호버 시 그림자 효과 증가
+      }}
+      transition="all 0.3s ease-in-out" // 부드러운 트랜지션 효과
+    >
+      <Box textAlign="center" fontSize="lg" color="gray.600" mb="5">
+        {date}
+      </Box>
+      <Grid templateColumns="repeat(3, 1fr)" gap={6}>
         {images.map((image, index) => (
-          <div key={index} className="postImage">
-            <img src={image} alt={`Class Image ${index + 1}`} />
-          </div>
+          <Box
+            key={index}
+            _hover={{
+              transform: "scale(1.05)", // 호버 시 이미지 확대
+              boxShadow: "lg", // 호버 시 그림자 효과 적용
+            }}
+            transition="all 0.3s ease-in-out" // 부드러운 트랜지션 효과
+          >
+            <Image
+              src={image}
+              alt={`Class Image ${index + 1}`}
+              borderRadius="5px"
+              objectFit="cover"
+              w="100%"
+              h="100%"
+            />
+          </Box>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Box>
   );
 }
 

@@ -1,12 +1,11 @@
-// JobPage.js 및 FreePage.js 예시
 import React from "react";
-import { Link } from "react-router-dom"; // Link 컴포넌트를 import 합니다.
+import { Link as RouterLink } from "react-router-dom";
+import { Box, VStack, Button, Heading } from "@chakra-ui/react";
 import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import Title from "../components/Title/Title";
 import PostItem from "../components/PostItem/PostItem";
 import Footer from "../components/Footer/Footer";
-import "./style/boardPage.css";
 
 const mockPosts = [
   { id: 1, title: "첫 번째 게시글", author: "홍길동", date: "2024-03-28" },
@@ -16,23 +15,25 @@ const mockPosts = [
 
 function JobPage() {
   return (
-    <div className="pageContainer">
-      <div className="pageHeader">
-        <Title text="취업/자격증" />
-        <Link to="/upload" className="writeButton">
-          글쓰기
-        </Link>{" "}
-        {/* 글쓰기 버튼 추가 */}
-      </div>
-      {mockPosts.map((post) => (
-        <PostItem
-          key={post.id}
-          title={post.title}
-          author={post.author}
-          date={post.date}
-        />
-      ))}
-    </div>
+    <Box>
+      <VStack spacing={4} align="stretch" m={4}>
+        <Box d="flex" justifyContent="space-between" alignItems="center">
+          <Title text="취업/자격증" />
+          <Button as={RouterLink} to="/upload" colorScheme="teal">
+            글쓰기
+          </Button>
+        </Box>
+        {mockPosts.map((post) => (
+          <RouterLink key={post.id} to={`/detail/${post.id}`}>
+            <PostItem
+              title={post.title}
+              author={post.author}
+              date={post.date}
+            />
+          </RouterLink>
+        ))}
+      </VStack>
+    </Box>
   );
 }
 

@@ -1,38 +1,45 @@
-// src/pages/ClassPage.js
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Box, VStack, Button } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Nav from "../components/Nav/Nav";
 import ClassPostItem from "../components/ClassPostItem/ClassPostItem";
+import Title from "../components/Title/Title";
 import Footer from "../components/Footer/Footer";
-import "./style/classPage.css";
-
-// Mock data for class posts
-const mockClassPosts = [
-  {
-    id: 1,
-    date: "08:01 MON",
-    images: [
-      "/path/to/image1.jpg",
-      "/path/to/image2.jpg",
-      "/path/to/image3.jpg",
-      "/path/to/image4.jpg",
-      "/path/to/image5.jpg",
-      "/path/to/image6.jpg",
-    ],
-    // ... other posts
-  },
-  // ... more mock posts
-];
 
 function ClassPage() {
+  const [classPosts, setClassPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://43.201.98.198:8080/photo") // 'http://' 프로토콜을 추가
+      .then((response) => response.json())
+      .then((data) => {
+        setClassPosts(
+          data.map((item) => ({
+            ...item,
+            images: [item["이미지"]],
+          }))
+        );
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  }, []);
+
   return (
-    <div className="classPage">
-      <div className="classPostsContainer">
-        {mockClassPosts.map((post) => (
+    <Box>
+      <VStack spacing={4} align="stretch" m={4}>
+        <Box d="flex" justifyContent="space-between" alignItems="center">
+          <Title text="화면 공유" />
+          <Button as={RouterLink} to="/upload" colorScheme="teal">
+            글쓰기
+          </Button>
+        </Box>
+        {classPosts.map((post) => (
           <ClassPostItem key={post.id} date={post.date} images={post.images} />
         ))}
-      </div>
-    </div>
+      </VStack>
+    </Box>
   );
 }
 
